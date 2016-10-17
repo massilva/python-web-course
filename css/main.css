@@ -31,3 +31,7 @@ img.bg-wisteria {
 .text-blue{
     color: #2980b9;
 }
+
+.reveal section .no-border img{
+    border: 0px;
+}
