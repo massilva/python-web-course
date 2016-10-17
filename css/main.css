@@ -1,0 +1,33 @@
+h1.text-shadow, h2.text-shadow, h3.text-shadow, h4.text-shadow, h5.text-shadow {
+    text-shadow: 6px 5px 10px #000;
+}
+
+h2.title{
+    font-family: "Orbitron", "Source Sans Pro", Helvetica, sans-serif;
+}
+
+h4.legend{
+    color: #3498db;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Orbitron-Light'), local('Orbitron-Regular'), url(font/orbitron.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+.bg-wisteria,
+img.bg-wisteria {
+    background-color: #8e44ad !important;
+}
+
+.bg-midnight{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.text-blue{
+    color: #2980b9;
+}

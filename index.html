@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Desenvolvimento web com Python</title>
+
+        <meta name="description" content="Slide apresentado no mini-curso de desenvolvimento web com python.">
+        <meta name="author" content="Marcos Antônio de Souza Silva">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background='#c0392b'>
+                    <h2 class="text-shadow title">Web Developer</h2>
+                    <h4 class="text-shadow legend">My first Flask Application</h4>
+                </section>
+                <section data-background="#2980b9">
+                    <h2 class="text-shadow">Summary</h2>
+                    <ul>
+                        <li>Introduction</li>
+                        <li>Use technologies</li>
+                        <li>ToDo Application</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2 class="text-shadow">Introduction</h2>
+                    </section>
+                    <section>
+                        <h2 class="text-shadow">Python</h2>
+                        <p>
+                            Python is a programming language that lets you work quickly
+                            and integrate systems more effectively.
+                        </p>
+                    </section>
+                    <section>
+                        <h2 class="text-shadow">Python</h2>
+                        <ul>
+                            <li>Friendly</li>
+                            <li>Easy to Learn</li>
+                            <li>Open-source</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2 class="text-shadow">Use Python for...</h2>
+                        <p>
+                            <table>
+                                <tr class="fragment">
+                                    <td>Web Programming</td><td> Django, Pyramid, Bottle, Tornado, Flask, web2py</td>
+                                </tr>
+                                <tr class="fragment">
+                                    <td>GUI Development</td><td> wxPython, tkInter, PyGtk, PyGObject, PyQt</td>
+                                </tr>
+                                <tr class="fragment">
+                                    <td>Scientific and Numeric</td><td> SciPy, Pandas, IPython</td>
+                                </tr>
+                                <tr class="fragment">
+                                    <td>Software Development</td><td> Buildbot, Trac, Roundup</td>
+                                </tr>
+                                <tr class="fragment">
+                                    <td>System Administration</td><td> Ansible, Salt, OpenStack</td>
+                                </tr>
+                            </table>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Web Programming</h2>
+                    </section>
+                    <section>
+                        <h2>Many choices</h2>
+                        <ul>
+                            <li class="fragment">Frameworks such as Django and Pyramid.</li>
+                            <li class="fragment">Micro-frameworks such as Flask and Bottle.</li>
+                            <li class="fragment">Advanced content management systems such as Plone and django CMS.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Supports many Internet protocols</h2>
+                        <ul>
+                            <li>HTML and XML</li>
+                            <li>JSON</li>
+                            <li>E-mail processing.</li>
+                            <li>Support for FTP, IMAP, and other Internet protocols.</li>
+                            <li>Easy-to-use socket interface.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>More libraries</h2>
+                        <ul>
+                            <li><span class="text-blue">Requests</span> a powerful HTTP client library.</li>
+                            <li><span class="text-blue">BeautifulSoup</span> an HTML parser that can handle all sorts of oddball HTML.</li>
+                            <li><span class="text-blue">Feedparser</span> for parsing RSS/Atom feeds.</li>
+                            <li><span class="text-blue">Twisted Python</span> a framework for asynchronous network programming.</li>
+                            <li><span class="text-blue">Paramiko</span> implementing the SSH2 protocol.</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h2 class="text-shadow">Struct</h2>
+                    <ul>
+                        <li>doc</li>
+                        <li>src</li>
+                        <ul>
+                            <li>nome_do_projeto</li>
+                            <ul>
+                                <li>lib</li>
+                                <li>models</li>
+                                <li>static</li>
+                                <li>templates</li>
+                                <li>views</li>
+                                <li>app.py</li>
+                                <li>config.py</li>
+                            </ul>
+                            <li>instance</li>
+                            <ul>
+                                <li>config.cfg</li>
+                            </ul>
+                            <li>testes</li>
+                        </ul>
+                        <li>web</li>
+                    </ul>
+                </section>
+                <section data-background='#c0392b'>
+                    <h2 class="text-shadow">Referências</h2>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script>
+            (function () {
+                // More info https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+                    controls: true,
+                    progress: true,
+                    history: true,
+                    center: true,
+                    transition: 'slide',
+                    // More info https://github.com/hakimel/reveal.js#dependencies
+                    dependencies: [
+                        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                        { src: 'plugin/zoom-js/zoom.js', async: true },
+                        { src: 'plugin/notes/notes.js', async: true }
+                    ]
+                });
+            }());
+        </script>
+    </body>
+</html>
