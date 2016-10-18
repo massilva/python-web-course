@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/black.css" id="theme">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="shortcut icon" href="img/logo.png">
 
         <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -37,30 +38,32 @@
     <body>
         <div class="reveal">
             <div class="slides">
-                <section data-background='#c0392b'>
+                <section data-background='./img/background2.jpg'>
                     <h2 class="text-shadow title">Web Developer</h2>
                     <h4 class="text-shadow legend">My first Flask Application</h4>
                 </section>
-                <section data-background="#2980b9">
-                    <h2 class="text-shadow">Summary</h2>
-                    <ul>
-                        <li>Introduction</li>
-                        <li>Use technologies</li>
-                        <li>ToDo Application</li>
-                    </ul>
+                <section data-background='./img/background1.jpg'>
+                    <h2 class="text-shadow title">About Me</h2>
+                    <blockquote class="transparent">
+                        <ul class="text-blue">
+                            <li class="fragment">Graduating in Science of Computer at UFBA.</li>
+                            <li class="fragment">Biometric Recognition of Newborn.</li>
+                            <li class="fragment">Passionate about the computer, algorithms, performance and quality of code.</li>
+                            <li class="fragment">Participate of the GRUPRO - Programming group at UFBA.</li>
+                            <li class="fragment">Project leader in GIIRO Project at STI-UFBA.</li>
+                        </ul>
+                    </blockquote>
+                    <h4 class="text-right text-red">Marcos Silva</h4>
                 </section>
                 <section>
-                    <section>
-                        <h2 class="text-shadow">Introduction</h2>
-                    </section>
-                    <section>
+                    <section data-background="./img/background-crysis.jpg">
                         <h2 class="text-shadow">Python</h2>
-                        <blockquote class="transparent">
+                        <blockquote class="bg-midnight">
                             Python is a programming language that lets you work quickly
                             and integrate systems more effectively.
                         </blockquote>
                     </section>
-                    <section>
+                    <section data-background="#2c3e50">
                         <h2 class="text-shadow">Python</h2>
                         <ul>
                             <li>Friendly</li>
@@ -68,7 +71,7 @@
                             <li>Open-source</li>
                         </ul>
                     </section>
-                    <section>
+                    <section data-background="#2c3e50">
                         <h2 class="text-shadow">Use Python for...</h2>
                         <p>
                             <table>
@@ -90,10 +93,10 @@
                             </table>
                         </p>
                     </section>
-                    <section>
+                    <section data-background="#2c3e50">
                         <h2>Web Programming</h2>
-                    </section>
-                    <section>
+                    </section data-background="#2c3e50">
+                    <section data-background="#2c3e50">
                         <h2>Many choices</h2>
                         <ul>
                             <li class="fragment">Frameworks such as Django and Pyramid.</li>
@@ -101,7 +104,7 @@
                             <li class="fragment">Advanced content management systems such as Plone and django CMS.</li>
                         </ul>
                     </section>
-                    <section>
+                    <section data-background="#2c3e50">
                         <h2>Supports many Internet protocols</h2>
                         <ul>
                             <li>HTML and XML</li>
@@ -111,7 +114,7 @@
                             <li>Easy-to-use socket interface.</li>
                         </ul>
                     </section>
-                    <section>
+                    <section data-background="#2c3e50">
                         <h2>More libraries</h2>
                         <ul>
                             <li><span class="text-blue">Requests</span> a powerful HTTP client library.</li>
@@ -123,12 +126,14 @@
                     </section>
                 </section>
                 <section>
+                    <section data-background="./img/background-bruce.jpg">
+                    </section>
                     <section data-background="#2980b9">
                         <figure>
                             <img src="./img/flask.svg" alt="Flask logo" title="Flask logo" width="600" />
                         </figure>
                     </section>
-                    <section>
+                    <section data-background="#8e44ad">
                         <h2>FLASK</h2>
                         <blockquote class="transparent">
                             Microframework for Python based on Werkzeug, Jinja 2 and good intentions.
@@ -141,11 +146,11 @@
                             ```
                             $ pip install Flask
                             ```
-                            ### Or direct download
+                            ### Or directly
                             http://flask.pocoo.org/
                          </script>
                     </section>
-                    <section>
+                    <section data-background="#2c3e50">
                         <h2>What’s in the Box?</h2>
                         <ul>
                             <li class="fragment">built-in development server and debugger</li>
@@ -160,32 +165,319 @@
                     </section>
                 </section>
                 <section>
-                    <h2 class="text-shadow">Struct</h2>
-                    <ul>
-                        <li>doc</li>
-                        <li>src</li>
+                    <section data-background="./img/bg-scrat.jpg">
+                        <h1 class="text-shadow">My first flask application</h1>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">Python requirements</h2>
+                    </section>
+                    <section data-background="#2c3e50">
                         <ul>
-                            <li>nome_do_projeto</li>
-                            <ul>
-                                <li>lib</li>
-                                <li>models</li>
-                                <li>static</li>
-                                <li>templates</li>
-                                <li>views</li>
-                                <li>app.py</li>
-                                <li>config.py</li>
-                            </ul>
-                            <li>instance</li>
-                            <ul>
-                                <li>config.cfg</li>
-                            </ul>
-                            <li>testes</li>
+                            <li>Flask==0.10.1</li>
+                            <li class="fragment">Flask-SQLAlchemy==2.1</li>
+                            <li class="fragment">Flask-Testing==0.4.2</li>
+                            <li class="fragment">Jinja2==2.8</li>
+                            <li class="fragment">SQLAlchemy==1.0.12</li>
+                            <li class="fragment">Werkzeug==0.11.4</li>
                         </ul>
-                        <li>web</li>
-                    </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <figure>
+                            <h2 class="text-shadow">Hands on</h2>
+                            <img src="./img/escrevendo1.gif" alt="escrevendo" title="mão na massa"/>
+                        </figure>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">Home</h2>
+                        <ul>
+                            <li class="folder">myfirstflask</li>
+                            <li class="folder">tests</li>
+                            <li class="file-py">run.py</li>
+                            <li class="file-py">test_app.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder">routes</li>
+                            <li class="folder">static</li>
+                            <li class="folder">templates</li>
+                            <li class="file-py">app.py</li>
+                            <li class="file-py">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/routes</h2>
+                        <ul>
+                            <li class="file-py text-blue">__init__.py</li>
+                            <li class="file-py">app.py</li>
+                            <!-- <li class="file-py">errors.py</li> -->
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/routes/app.py
+                            ```
+                            # -*- coding: utf-8 -*-
+                            from flask import Blueprint, render_template
+
+                            mod_app = Blueprint('mod_app', __name__)
+
+                            @mod_app.route('/')
+                            def home():
+                                return render_template('index.html', title='Index')
+
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/routes</h2>
+                        <ul>
+                            <li class="file-py text-blue">__init__.py</li>
+                            <li class="file-py text-blue">app.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder text-blue">routes</li>
+                            <li class="folder">static</li>
+                            <li class="folder">templates</li>
+                            <li class="file-py">app.py</li>
+                            <li class="file-py">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder text-blue">routes</li>
+                            <li class="folder text-blue">static</li>
+                            <li class="folder">templates</li>
+                            <li class="file-py">app.py</li>
+                            <li class="file-py">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/templates</h2>
+                        <ul>
+                            <!-- <li class="file-html">error.html</li> -->
+                            <li class="file-html">layout.html</li>
+                            <li class="file-html">index.html</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/templates/layout.html
+                            ```
+                            <!DOCTYPE html>
+                            <html>
+
+                            <head>
+                                <title>{% block title %}{% endblock %}</title>
+                                {% block css %}{% endblock%}
+                            </head>
+
+                            <body>
+                                {% block content %}{% endblock %}
+                            </body>
+                            {% block js %}{% endblock%}
+
+                            </html>
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/templates</h2>
+                        <ul>
+                            <!-- <li class="file-html">error.html</li> -->
+                            <li class="file-html text-blue">layout.html</li>
+                            <li class="file-html">index.html</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/templates/index.html
+                            ```
+                            {% extends "layout.html" %}
+
+                            {% block title %}My First Flask{% endblock %}
+
+                            {% block css%}{% endblock %}
+
+                            {% block js%}{% endblock %}
+
+                            {% block content %}
+                                <h1>My First Flask</h1>
+                            {% endblock %}
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/templates</h2>
+                        <ul>
+                            <!-- <li class="file-html">error.html</li> -->
+                            <li class="file-html text-blue">layout.html</li>
+                            <li class="file-html text-blue">index.html</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder text-blue">routes</li>
+                            <li class="folder text-blue">static</li>
+                            <li class="folder text-blue">templates</li>
+                            <li class="file-py">app.py</li>
+                            <li class="file-py">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/app.py
+                            ```
+                            # -*- coding: utf-8 -*-
+                            from flask.ext.sqlalchemy import SQLAlchemy
+                            from flask import Flask
+
+                            # App
+                            app = Flask(__name__, instance_relative_config=True)
+
+                            # Config
+                            app.config.from_object('myfirstflask.config')
+
+                            # Flask-SQLAlchemy
+                            db = SQLAlchemy(app)
+
+                            # Blueprints
+                            from myfirstflask.routes.app import mod_app
+                            app.register_blueprint(mod_app)
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder text-blue">routes</li>
+                            <li class="folder text-blue">static</li>
+                            <li class="folder text-blue">templates</li>
+                            <li class="file-py text-blue">app.py</li>
+                            <li class="file-py">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/config.py
+                            ```
+                            # -- DATABASE URI -- #
+                            SQLALCHEMY_DATABASE_URI = 'sqlite:///myfirstflask.db'
+                            # SQLALCHEMY_DATABASE_URI = 'postgresql://<user>:<pass>@<server>/<database>'
+                            # SQLALCHEMY_DATABASE_URI = 'mysql://<user>:<pass>@<server>/<database>'
+                            SQLALCHEMY_TRACK_MODIFICATIONS = False
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder text-blue">routes</li>
+                            <li class="folder text-blue">static</li>
+                            <li class="folder text-blue">templates</li>
+                            <li class="file-py text-blue">app.py</li>
+                            <li class="file-py text-blue">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">Home</h2>
+                        <ul>
+                            <li class="folder text-blue">myfirstflask</li>
+                            <li class="folder">tests</li>
+                            <li class="file-py">run.py</li>
+                            <li class="file-py">test_app.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">Home</h2>
+                        <ul>
+                            <li class="folder text-blue">myfirstflask</li>
+                            <li class="folder text-blue">tests</li>
+                            <li class="file-py">run.py</li>
+                            <li class="file-py">test_app.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### run.py
+                            ```
+                            from myfirstflask.app import app
+
+                            if __name__ == '__main__':
+                                app.run(host='0.0.0.0')
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">Home</h2>
+                        <ul>
+                            <li class="folder text-blue">myfirstflask</li>
+                            <li class="folder text-blue">tests</li>
+                            <li class="file-py text-blue">run.py</li>
+                            <li class="file-py">test_app.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### test_app.py
+                            ```
+                            # -*- coding: utf-8 -*-
+                            from tests.baseTest import *
+                            import unittest
+
+
+                            def main():
+                                unittest.main()
+
+                            if __name__ == '__main__':
+                                main()
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">Home</h2>
+                        <ul>
+                            <li class="folder text-blue">myfirstflask</li>
+                            <li class="folder text-blue">tests</li>
+                            <li class="file-py text-blue">run.py</li>
+                            <li class="file-py text-blue">test_app.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### Now run
+                            ```
+                            $ python3 run.py
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <figure>
+                            <h2>Dance...</h2>
+                            <img class="bg-midnight" src="./img/calton.gif" alt="calton" />
+                        </figure>
+                    </section>
                 </section>
                 <section data-background='#c0392b'>
-                    <h2 class="text-shadow">Referências</h2>
+                    <h2 class="text-shadow">Questions ?</h2>
                 </section>
             </div>
         </div>

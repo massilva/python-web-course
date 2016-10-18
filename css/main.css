@@ -24,7 +24,8 @@ img.bg-wisteria {
     background-color: #8e44ad !important;
 }
 
-.bg-midnight{
+.reveal .bg-midnight,
+blockquote.bg-midnight{
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -32,6 +33,32 @@ img.bg-wisteria {
     color: #2980b9;
 }
 
+.text-red,
+.reveal h2.text-red,
+.reveal h3.text-red,
+.reveal h4.text-red{
+    color: #c0392b;
+}
+
+.text-right,
+.reveal h2.text-right,
+.reveal h3.text-right,
+.reveal h4.text-right{
+    text-align: right;
+}
+
 .reveal section .no-border img{
     border: 0px;
+}
+
+ul li.folder {
+    list-style-image: url('./img/folder.png');
+}
+
+ul li.file-py {
+    list-style-image: url('./img/python.png');
+}
+
+ul li.file-html {
+    list-style-image: url('./img/html.png');
 }
