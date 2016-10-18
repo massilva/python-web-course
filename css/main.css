@@ -47,7 +47,8 @@ blockquote.bg-midnight{
     text-align: right;
 }
 
-.reveal section .no-border img{
+.reveal section .no-border img,
+.reveal img.no-border{
     border: 0px;
 }
 
@@ -61,4 +62,17 @@ ul li.file-py {
 
 ul li.file-html {
     list-style-image: url('./img/html.png');
+}
+
+ul li.file-css {
+    list-style-image: url('./img/css3.png');
+}
+
+ul li.file-js {
+    list-style-image: url('./img/js.png');
+}
+
+.reveal .transparent{
+    background: transparent;
+    box-shadow: none;
 }

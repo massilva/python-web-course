@@ -44,7 +44,7 @@
                 </section>
                 <section data-background='./img/background1.jpg'>
                     <h2 class="text-shadow title">About Me</h2>
-                    <blockquote class="transparent">
+                    <blockquote class="bg-midnight">
                         <ul class="text-blue">
                             <li class="fragment">Graduating in Science of Computer at UFBA.</li>
                             <li class="fragment">Biometric Recognition of Newborn.</li>
@@ -182,9 +182,9 @@
                         </ul>
                     </section>
                     <section data-background="#2c3e50">
+                        <h2 class="text-shadow">Hands on</h2>
                         <figure>
-                            <h2 class="text-shadow">Hands on</h2>
-                            <img src="./img/escrevendo1.gif" alt="escrevendo" title="mão na massa"/>
+                            <img src="./img/escrevendo1.gif" alt="escrevendo" title="hands on"/>
                         </figure>
                     </section>
                     <section data-background="#2c3e50">
@@ -472,12 +472,409 @@
                     <section data-background="#2c3e50">
                         <figure>
                             <h2>Dance...</h2>
-                            <img class="bg-midnight" src="./img/calton.gif" alt="calton" />
+                            <img class="no-border transparent" src="./img/calton.gif" alt="calton" />
+                        </figure>
+                    </section>
+                </section>
+                <section>
+                    <section data-background="./img/bg-compass.jpg">
+                        <h2 class="text-shadow">So... what to do ... ?</2>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2>Simple map application</h2>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2>Let's go!</h2>
+                        <figure>
+                            <img src="./img/escrevendo2.gif" alt="escrevendo" title="hands on"/>
+                        </figure>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2>Download</h2>
+                        <ul>
+                            <li>JQuery</li>
+                            <li>LeafletJS</li>
+                        </ul>
+                        <h2>Or here</h2>
+                        <p>https://goo.gl/w6wP4d</p>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2>Extract the files on the Static Folder</h2>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">Home</h2>
+                        <ul>
+                            <li class="folder">myfirstflask</li>
+                            <li class="folder">tests</li>
+                            <li class="file-py">run.py</li>
+                            <li class="file-py">test_app.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder">models</li>
+                            <li class="folder">routes</li>
+                            <li class="folder">static</li>
+                            <li class="folder">templates</li>
+                            <li class="file-py">app.py</li>
+                            <li class="file-py text-blue">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/models</h2>
+                        <ul>
+                            <li class="file-py text-blue">__init__.py</li>
+                            <li class="file-py">marker.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/models/marker.py
+                            ```
+                            # -*- coding: utf-8 -*-
+                            from myfirstflask.app import db
+
+                            class Marker(db.Model):
+                                id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+                                # coordenadas = db.Column(Geography(geometry_type='POINT', srid=SRID), unique=True)
+                                latitude = db.Column(db.Float)
+                                longitude = db.Column(db.Float)
+
+                                def __init__(self, latitude=None, longitude=None):
+                                    self.latitude = latitude
+                                    self.longitude = longitude
+
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/models</h2>
+                        <ul>
+                            <li class="file-py text-blue">__init__.py</li>
+                            <li class="file-py text-blue">marker.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder">routes</li>
+                            <li class="folder">static</li>
+                            <li class="folder">templates</li>
+                            <li class="file-py">app.py</li>
+                            <li class="file-py text-blue">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/routes</h2>
+                        <ul>
+                            <li class="file-py text-blue">__init__.py</li>
+                            <li class="file-py text-blue">app.py</li>
+                            <li class="file-py">marker.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/routes/marker.py
+                            ```
+                            # -*- coding: utf-8 -*-
+                            from flask import Blueprint, request
+                            from myfirstflask.app import db
+                            from myfirstflask.models.marker import Marker
+                            import json
+
+                            mod_marker = Blueprint('mod_marker', __name__)
+
+                            @mod_marker.route('/marker/add', methods=['POST'])
+                            def add_marker():
+                                #  data = json.loads(request.data.decode('utf-8'))
+                                data = {
+                                    'lat': request.form.get("lat"),
+                                    'lng': request.form.get("lng")
+                                }
+                                marker = Marker(request.form.get("lat"), request.form.get("lng"))
+                                try:
+                                    db.session.add(marker)
+                                    db.session.commit()
+                                    data['id'] = marker.id
+                                    data['msg'] = "Adicionado com sucesso"
+                                except Exception as error:
+                                    print(repr(error))
+                                    data['id'] = -1
+                                    data['msg'] = "Não foi possível adicionar o marcador"
+                                return json.dumps(data), 200
+
+                            @mod_marker.route('/marker/all')
+                            def all_markers():
+                                data = [{'id': marker.id, 'lat': marker.latitude, 'lng': marker.longitude}
+                                        for marker in Marker.query.all()]
+                                return json.dumps(data), 200
+
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2>Gist</h2>
+                        <p>
+                            https://goo.gl/KMhmsF
+                        </p>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/routes</h2>
+                        <ul>
+                            <li class="file-py text-blue">__init__.py</li>
+                            <li class="file-py text-blue">app.py</li>
+                            <li class="file-py text-blue">marker.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder text-blue">routes</li>
+                            <li class="folder">static</li>
+                            <li class="folder">templates</li>
+                            <li class="file-py">app.py</li>
+                            <li class="file-py text-blue">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/static</h2>
+                        <ul>
+                            <li class="folder">css</li>
+                            <li class="folder text-blue">img</li>
+                            <li class="folder">js</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/static/css/</h2>
+                        <ul>
+                            <li class="file-css text-blue">leaflet.css</li>
+                            <li class="file-css">main.css</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/static/css/main.css
+                            ```
+                            html, body, .map{
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                position: absolute;
+                                margin: 0;
+                                padding: 0;
+                            }
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/static/css/</h2>
+                        <ul>
+                            <li class="file-css text-blue">leaflet.css</li>
+                            <li class="file-css text-blue">main.css</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/static</h2>
+                        <ul>
+                            <li class="folder text-blue">css</li>
+                            <li class="folder text-blue">img</li>
+                            <li class="folder">js</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/static/js/</h2>
+                        <ul>
+                            <li class="file-js text-blue">jquery.min.js</li>
+                            <li class="file-js text-blue">leaflet.min.js</li>
+                            <li class="file-js">main.js</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/static/js/main.js
+                            ```
+                            (function () {
+                                'use strict';
+                                var defaultOptions, map, options;
+                                options = {
+                                    enableHighAccuracy: true,
+                                    timeout: 5000,
+                                    maximumAge: 0
+                                };
+                                //configuração padrão do mapa
+                                defaultOptions = {zoom: 19, center: [-13.0035168, -38.4802806], zoomControl: true};
+                                //...
+                                // Geolocation support
+                                if (navigator.geolocation) {
+                                    navigator.geolocation.getCurrentPosition(successGeo, errorGeo, options);
+                                } else {
+                                    alert("Geolocation is not supported by this browser.");
+                                }
+                                loadMap(defaultOptions);
+                            });
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2>Gist</h2>
+                        <p>
+                            https://goo.gl/DdUXJG
+                        </p>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/static/js/</h2>
+                        <ul>
+                            <li class="file-js text-blue">jquery.min.js</li>
+                            <li class="file-js text-blue">leaflet.min.js</li>
+                            <li class="file-js text-blue">main.js</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/static</h2>
+                        <ul>
+                            <li class="folder text-blue">css</li>
+                            <li class="folder text-blue">img</li>
+                            <li class="folder text-blue">js</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder text-blue">routes</li>
+                            <li class="folder text-blue">static</li>
+                            <li class="folder">templates</li>
+                            <li class="file-py">app.py</li>
+                            <li class="file-py text-blue">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/templates</h2>
+                        <ul>
+                            <li class="file-html text-blue">layout.html</li>
+                            <li class="file-html">index.html</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/templates/index.html
+                            ```
+                            {% extends "layout.html" %}
+
+                            {% block title %}My First Flask{% endblock %}
+
+                            {% block css%}
+                                <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/leaflet.css') }}">
+                                <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="screen" />
+                            {% endblock %}
+
+                            {% block js%}
+                                <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+                                <script src="{{ url_for('static', filename='js/leaflet.min.js') }}"></script>
+                                <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+                            {% endblock %}
+
+                            {% block content %}
+                                <div id="map" class="map"></div>
+                            {% endblock %}
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask/templates</h2>
+                        <ul>
+                            <!-- <li class="file-html">error.html</li> -->
+                            <li class="file-html text-blue">layout.html</li>
+                            <li class="file-html text-blue">index.html</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder text-blue">routes</li>
+                            <li class="folder text-blue">static</li>
+                            <li class="folder text-blue">templates</li>
+                            <li class="file-py">app.py</li>
+                            <li class="file-py text-blue">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### ./myfirstflask/app.py
+                            ```
+                            # -*- coding: utf-8 -*-
+                            from flask.ext.sqlalchemy import SQLAlchemy
+                            from flask import Flask
+
+                            # App
+                            app = Flask(__name__, instance_relative_config=True)
+
+                            # Config
+                            app.config.from_object('myfirstflask.config')
+
+                            # Flask-SQLAlchemy
+                            db = SQLAlchemy(app)
+
+                            # Automatically create tables
+                            from myfirstflask.models import marker
+                            db.create_all()
+
+                            # Blueprints
+                            from myfirstflask.routes.app import mod_app
+                            app.register_blueprint(mod_app)
+
+                            from myfirstflask.routes.marker import mod_marker
+                            app.register_blueprint(mod_marker)
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <h2 class="text-shadow">./myfirstflask</h2>
+                        <ul>
+                            <li class="folder text-blue">models</li>
+                            <li class="folder text-blue">routes</li>
+                            <li class="folder text-blue">static</li>
+                            <li class="folder text-blue">templates</li>
+                            <li class="file-py text-blue">app.py</li>
+                            <li class="file-py text-blue">config.py</li>
+                            <li class="file-py text-blue">__init__.py</li>
+                        </ul>
+                    </section>
+                    <section data-background="#2c3e50" data-markdown>
+                        <script type="text/template">
+                            ### Now run
+                            ```
+                            $ python3 run.py
+                            ```
+                        </script>
+                    </section>
+                    <section data-background="#2c3e50">
+                        <figure>
+                            <h2>Dance...</h2>
+                            <img class="no-border transparent" src="./img/will.gif" alt="will" width="500" />
                         </figure>
                     </section>
                 </section>
                 <section data-background='#c0392b'>
-                    <h2 class="text-shadow">Questions ?</h2>
+                    <h2 class="text-shadow">Links</h2>
+                    <ul>
+                        <li><span class="text-blue">Slide</span> - https://github.com/massilva/python-web-course</li>
+                        <li><span class="text-blue">MyFirstFlask</span> - https://github.com/massilva/myfirstflaskapp</li>
+                        <li><span class="text-blue">./myfirstflask/static/js/main.js</span> - https://goo.gl/DdUXJG</li>
+                        <li><span class="text-blue">./myfirstflask/routes/marker.py</span> - https://goo.gl/KMhmsF</li>
+                    </ul>
+                </section>
+                <section data-background="#2980b9">
+                    <h1>Obrigado!</h1>
                 </section>
             </div>
         </div>
